@@ -1,6 +1,6 @@
 # [ICCV 2025] DC-AE 1.5: Accelerating Diffusion Model Convergence with Structured Latent Space
 
-\[[Paper]()\] \[[Demo](https://dc-ae-1-5.hanlab.ai/)\] \[[Project](https://hanlab.mit.edu/projects/dc-ae-1-5)\]
+\[[Paper]()\] \[[AE Demo](https://dc-ae-1-5.hanlab.ai/)\] \[[Project](https://hanlab.mit.edu/projects/dc-ae-1-5)\]
 
 ## News
 
