@@ -23,4 +23,11 @@
   journal={arXiv preprint arXiv:2410.10733},
   year={2024}
 }
+
+@article{chen2025dcae15,
+  title={DC-AE 1.5: Accelerating Diffusion Model Convergence with Structured Latent Space}, 
+  author={Chen, Junyu and Zou, Dongyun and He, Wenkun and Chen, Junsong and Xie, Enze and Han, Song and Cai, Han},
+  journal={arXiv preprint arXiv:2508.00413},
+  year={2025}
+}
 ```
