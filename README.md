@@ -8,7 +8,7 @@
 
 ### Deep Compression Autoencoder
 - [ICLR 2025] DC-AE 1.0: [Getting Started](projects/DC-AE.md), [Website](https://hanlab.mit.edu/projects/dc-ae)
-- [ICCV 2025] DC-AE 1.5: [Getting Started](projects/DC-AE-1.5.md), [Website](https://hanlab.mit.edu/projects/dc-ae-1-5), [AE Demo](https://dc-gen.hanlab.ai/)
+- [ICCV 2025] DC-AE 1.5: [Getting Started](projects/DC-AE-1.5.md), [Website](https://hanlab.mit.edu/projects/dc-ae-1-5), [AE Demo](https://dc-gen.hanlab.ai/), \[[T2I Demo](https://dc-gen.hanlab.ai/dc_gen_sana_f64c128/)\]
 
 ## Contact
 
@@ -24,8 +24,8 @@
   year={2024}
 }
 
-@article{chen2025dcae15,
-  title={DC-AE 1.5: Accelerating Diffusion Model Convergence with Structured Latent Space}, 
+@article{chen2025dc,
+  title={DC-AE 1.5: Accelerating Diffusion Model Convergence with Structured Latent Space},
   author={Chen, Junyu and Zou, Dongyun and He, Wenkun and Chen, Junsong and Xie, Enze and Han, Song and Cai, Han},
   journal={arXiv preprint arXiv:2508.00413},
   year={2025}
