@@ -4,6 +4,14 @@
 
 - \[2025/6\] 🔥 DC-AE 1.5 is accepted by ICCV 2025!
 
+## Getting Started
+
+```bash
+conda create -n dc_gen python=3.10
+conda activate dc_gen
+pip install -U -r requirements.txt
+```
+
 ## Content
 
 ### Deep Compression Autoencoder
