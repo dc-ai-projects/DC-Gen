@@ -197,7 +197,7 @@ python -m applications.dc_ae.demo_dc_ae_diffusion_model \
 
 Expected results:
 <p align="left">
-    <img src="https://huggingface.co/mit-han-lab/dc-ae-f64c128-in-1.0/resolve/main/assets/dc_ae_diffusion_example.png" width="600">
+    <img src="https://huggingface.co/cjy2003/dc_ae_figures/resolve/main/demo_dc_ae_diffusion.jpg" width="600">
 </p>
 
 ## Evaluate DC-AE-Diffusion Models
