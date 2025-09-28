@@ -1,4 +1,4 @@
-# DC-Gen: Accelerating Diffusion Models with Compressed Latent Space
+# DC-Gen: Post-Training Diffusion Acceleration with Deeply Compressed Latent Space
 
 ## News
 
