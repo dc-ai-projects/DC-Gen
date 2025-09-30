@@ -27,8 +27,6 @@ exp_yujlin
 exp_yuchao
 exp_jasonlu
 
-*.png
-*.jpg
 *.pth
 *.mp4
 /*.pt
