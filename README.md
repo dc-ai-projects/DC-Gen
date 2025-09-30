@@ -74,6 +74,9 @@ pip install -U -r requirements.txt
 
 [Han Cai](http://hancai.ai/)
 
+## Related Projects
+- [DC-VideoGen: Efficient Video Generation with Deep Compression Video Autoencoder](https://github.com/dc-ai-projects/DC-VideoGen)
+
 ## Reference
 
 ```bibtex
