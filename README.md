@@ -80,11 +80,11 @@ pip install -U -r requirements.txt
 ## Reference
 
 ```bibtex
-@article{he2025dcgen,
- title={DC-Gen: Post-Training Diffusion Acceleration with Deeply Compressed Latent Space},
- author={He, Wenkun and Gu, Yuchao and Chen, Junyu and Zou, Dongyun and Lin, Yujun and Zhang, Zhekai and Xi, Haocheng and Li, Muyang and Zhu, Ligeng and Yu, Jincheng and Chen, Junsong and Xie, Enze and Han, Song and Cai, Han},
- journal={arXiv preprint arXiv:2509.25180},
- year={2025}
+@article{he2025dc,
+  title={DC-Gen: Post-Training Diffusion Acceleration with Deeply Compressed Latent Space},
+  author={He, Wenkun and Gu, Yuchao and Chen, Junyu and Zou, Dongyun and Lin, Yujun and Zhang, Zhekai and Xi, Haocheng and Li, Muyang and Zhu, Ligeng and Yu, Jincheng and others},
+  journal={arXiv preprint arXiv:2509.25180},
+  year={2025}
 }
 
 @article{chen2024deep,
