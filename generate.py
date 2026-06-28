@@ -40,7 +40,6 @@ from __future__ import annotations
 import math
 import os
 import pathlib
-import subprocess
 import sys
 import time
 import uuid
@@ -51,15 +50,6 @@ from huggingface_hub import snapshot_download
 from PIL import Image
 
 repo_root = pathlib.Path(__file__).resolve().parent
-
-# Clone AnyFlow for the `far/` package used by AnyFlow pipeline variants
-anyflow_src = repo_root / 'AnyFlow'
-if not anyflow_src.exists():
-    subprocess.run(
-        ['git', 'clone', '--depth', '1', 'https://github.com/NVlabs/AnyFlow.git', str(anyflow_src)],
-        check=True,
-    )
-sys.path.insert(0, str(anyflow_src))
 
 from pipeline_dcgen_flux import DCGen_FluxPipeline
 from pipeline_dc_videogen import build_t2v_pipeline, build_i2v_pipeline
