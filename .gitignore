@@ -1,0 +1,5 @@
+__pycache__/
+pretrained_models/
+AnyFlow/
+results/
+*.pyc
