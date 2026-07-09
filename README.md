@@ -15,6 +15,16 @@
 - (🔥 New) \[2025/9/30\] We released [DC-AE-Lite](projects/DC-AE-Lite.md). 
 - \[2025/6\] DC-AE 1.5 is accepted by ICCV 2025!
 
+## 🎬 Demo
+
+https://github.com/dc-ai-projects/DC-Gen/raw/main/assets/dc-gen-figures/demo.mp4
+
+<p align="center">
+  <em>DC-Gen-FLUX generates a 4K image in 3.5s on a single NVIDIA 5090 GPU — a 138× total latency reduction over the base FLUX.1-Krea model.</em>
+</p>
+
+> If the video does not play inline, [click here to watch the demo](assets/dc-gen-figures/demo.mp4).
+
 ## 💡 Introduction
 DC-Gen is a new acceleration framework for diffusion models. DC-Gen works with any pre-trained diffusion model, boosting efficiency by transferring it into a deeply compressed latent space with lightweight post-training. For example, applying DC-Gen to FLUX.1-Krea-12B takes just 40 H100 GPU days. The resulting DC-Gen-FLUX delivers the same quality as the base model while achieving dramatic gains—53× faster inference on H100 at 4K resolution. And when paired with NVFP4, DC-Gen-FLUX (20 sampling steps) generates a 4K image in only 3.5 seconds on a single NVIDIA 5090 GPU, a total latency reduction of 138× compared to the base FLUX.1-Krea model.
 
