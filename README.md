@@ -1,6 +1,18 @@
-# DC-Gen CLI
+# DC-Gen: Post-Training Diffusion Acceleration with Deeply Compressed Latent Space
 
-Command-line interface for DC-Gen: post-training diffusion acceleration with deeply compressed latent spaces. Supports text-to-image (1K and 4K), text-to-video, image-to-video, and instruction-based image editing.
+DC-Gen adapts high-resolution visual generation and editing models (e.g., FLUX, Wan2.1, Qwen-Image-Edit) to deeply compressed latent spaces through efficient post-training. It enables native 4K image synthesis and achieves up to 54× acceleration.
+
+<p align="center">
+  <img src="https://github.com/dc-ai-projects/DC-Gen/raw/main/assets/dc-gen-figures/teaser_page1.png" alt="DC-Gen Teaser" width="100%">
+</p>
+
+<p align="center">
+  <video src="https://github.com/dc-ai-projects/DC-Gen/raw/main/assets/dc-gen-figures/demo.mp4" autoplay loop muted playsinline controls width="100%"></video>
+</p>
+
+---
+
+Command-line interface for running DC-Gen locally. Supports text-to-image (1K and 4K), text-to-video, image-to-video, and instruction-based image editing.
 
 ## Setup
 
