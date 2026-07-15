@@ -7,7 +7,7 @@ DC-Gen adapts high-resolution visual generation and editing models (e.g., FLUX, 
 </p>
 
 <p align="center">
-  <video src="https://github.com/dc-ai-projects/DC-Gen/raw/main/assets/dc-gen-figures/demo.mp4" autoplay loop muted playsinline controls width="100%"></video>
+  <video src="https://huggingface.co/dc-ai/Visualization2/resolve/main/Updated.mp4" autoplay loop muted playsinline controls width="100%"></video>
 </p>
 
 ---
