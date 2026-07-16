@@ -10,7 +10,7 @@
   <img src="assets/dc-gen-figures/teaser.jpg" width="90%" alt="teaser_page1"/>
 </p>
 
-[![Watch the video](assets/dc-gen-figures/teaser.jpg)](https://www.youtube.com/watch?v=gu9KKtJgbho)
+[![Watch the video](assets/dc-gen-figures/demo_video_first_frame.jpg)](https://www.youtube.com/watch?v=gu9KKtJgbho)
 
 <p align="center">
   <em>DC-Gen-FLUX generates a 4K image in 3.5s on a single NVIDIA 5090 GPU — a 138× total latency reduction over the base FLUX.1-Krea model.</em>
