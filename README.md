@@ -6,9 +6,13 @@
   <!-- <a href="https://huggingface.co/collections/dc-ai/dc-gen-6899bb095082244f396203e1"><img src="https://img.shields.io/static/v1?label=HuggingFace&message=DC-AI&color=yellow&logo=huggingface"></a> &ensp; -->
 </div>
 
+## 📖 Overview
+
 <p align="center" border-radius="10px">
   <img src="assets/dc-gen-figures/teaser2.png" width="90%" alt="teaser"/>
 </p>
+
+## 🎬 Demo
 
 [![Watch the video](assets/dc-gen-figures/demo_video_first_frame.jpg)](https://www.youtube.com/watch?v=gu9KKtJgbho)
 
