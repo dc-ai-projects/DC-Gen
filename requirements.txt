@@ -1,13 +1,27 @@
---extra-index-url https://download.pytorch.org/whl/cu128
 torch
 torchvision
+torchmetrics
+numpy
 
-accelerate
+timm
+einops
+opencv-python
+tqdm
+torchprofile
+scipy
+torch-fidelity
+diffusers
 omegaconf
-diffusers>=0.35.1
-gradio
-huggingface_hub
-peft
-sentencepiece
+ipdb
+wandb[media]
+ray
+torchdiffeq
+imageio[ffmpeg]
+
+huggingface-hub
 transformers
-qwen-vl-utils
+onnx
+onnxsim
+onnxruntime
+
+git+https://github.com/THUDM/ImageReward.git
