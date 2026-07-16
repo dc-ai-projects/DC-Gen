@@ -7,7 +7,7 @@
 </div>
 
 <p align="center" border-radius="10px">
-  <img src="assets/dc-gen-figures/teaser.jpg" width="90%" alt="teaser_page1"/>
+  <img src="assets/dc-gen-figures/teaser2.png" width="90%" alt="teaser"/>
 </p>
 
 [![Watch the video](assets/dc-gen-figures/demo_video_first_frame.jpg)](https://www.youtube.com/watch?v=gu9KKtJgbho)
