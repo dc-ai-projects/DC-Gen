@@ -9,7 +9,7 @@
 ## 📖 Overview
 
 <p align="center" border-radius="10px">
-  <img src="assets/dc-gen-figures/teaser2.png" width="90%" alt="teaser"/>
+  <img src="assets/dc-gen-figures/teaser2.png" width="100%" alt="teaser"/>
 </p>
 
 <p align="center">
