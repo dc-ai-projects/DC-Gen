@@ -36,9 +36,9 @@ DC-Gen is a new acceleration framework for diffusion models. DC-Gen works with a
   <img src="assets/dc-gen-figures/comp_qualitative.png" alt="teaser_page2"/>
 </figure>
 
-- <ins>DC-Gen-FLUX achieves approximately 53× latency reduction and a 56× throughput improvement over the base model at 4K resolution on H100.</ins>
+- <ins>The relative speedup of DC-Gen is more significant at higher resolutions, achieving up to 53.8× acceleration on DC-Gen-FLUX.</ins>
 <figure>
-  <img src="assets/dc-gen-figures/comp_speed.jpg" alt="teaser_page3"/>
+  <img src="assets/dc-gen-figures/comp_speed.png" alt="teaser_page3"/>
 </figure>
 
 ### Highlight 2: DC-Gen Maintains Base Model Quality
