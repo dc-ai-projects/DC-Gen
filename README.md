@@ -12,13 +12,13 @@
   <img src="assets/dc-gen-figures/teaser2.png" width="90%" alt="teaser"/>
 </p>
 
-## 🎬 Demo
-
-[![Watch the video](assets/dc-gen-figures/demo_video_first_frame.jpg)](https://www.youtube.com/watch?v=gu9KKtJgbho)
-
 <p align="center">
   <em>DC-Gen delivers high-quality, high-resolution visual generation across text-to-image, text-to-video, image-to-video, and image editing tasks, achieving up to 53.8× speedup over pre-trained diffusion models.</em>
 </p>
+
+## 🎬 Demo
+
+[![Watch the video](assets/dc-gen-figures/demo_video_first_frame.jpg)](https://www.youtube.com/watch?v=gu9KKtJgbho)
 
 ## 🔥🔥 News
 - (🔥 New) \[2025/9/30\] We released the [DC-Gen technical report](https://arxiv.org/abs/2509.25180) on arXiv.
