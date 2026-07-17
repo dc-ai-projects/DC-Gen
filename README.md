@@ -21,7 +21,7 @@
 [![Watch the video](assets/dc-gen-figures/demo_video_first_frame.jpg)](https://www.youtube.com/watch?v=gu9KKtJgbho)
 
 ## 🔥🔥 News
-- (🔥 New) \[2026/6/18\] DC-Gen is accepted by ECCV2026! 🎉
+- (🔥 New) \[2026/6/18\] DC-Gen is accepted by ECCV 2026! 🎉
 - (🔥 New) \[2025/9/30\] We released the [DC-Gen technical report](https://arxiv.org/abs/2509.25180) on arXiv.
 - (🔥 New) \[2025/9/30\] We released [DC-AE-Lite](projects/DC-AE-Lite.md). 
 - \[2025/6\] DC-AE 1.5 is accepted by ICCV 2025!
