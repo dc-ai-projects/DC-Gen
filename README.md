@@ -43,7 +43,7 @@ DC-Gen is a new acceleration framework for diffusion models. DC-Gen works with a
 
 ### Highlight 2: DC-Gen Maintains Base Model Quality
 
-FLUX.1-Krea is recognized for its superior realism and text-rendering capabilities but suffers from lower throughput. DC-Gen-FLUX successfully preserves these qualities while delivering a significant speedup over FLUX.1-Krea, achieving the highest throughput among the models compared.
+Modern visual diffusion models are recognized for their superior realism and text-rendering capabilities but suffer from low throughput. DC-Gen models successfully preserve these qualities while delivering a significant speedup over corresponding base models.
 
 - <ins>Comparison to Previous Models on 1024×1024 Resolution.</ins>
 <figure>
