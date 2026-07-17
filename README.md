@@ -31,7 +31,7 @@ DC-Gen is a new acceleration framework for diffusion models. DC-Gen works with a
 
 ### Highlight 1: DC-Gen Enables Native High-Resolution Image Generation with Exceptional Efficiency
 
-- <ins>FLUX does not support 4K image generation due to prohibitive training and inference costs. DC-Gen-FLUX addresses this limitation by reducing token redundancy with [DC-AE-f64c128](projects/DC-AE.md).</ins>
+- <ins>FLUX and Z-Image do not support native 4K image generation due to prohibitive training and inference costs. DC-Gen-FLUX and DC-Gen-Z-Image address this limitation by reducing token redundancy with [DC-AE-f64c128](projects/DC-AE.md).</ins>
 <figure>
   <img src="assets/dc-gen-figures/comp_qualitative.png" alt="teaser_page2"/>
 </figure>
