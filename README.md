@@ -108,12 +108,12 @@ Modern visual diffusion models are recognized for their superior realism and tex
 Previously, changing the autoencoder required retraining diffusion models from scratch, which was highly inefficient. DC-Gen introduces **Embedding Alignment** to transfer the base model's knowledge to the new latent space. After this alignment, the model can generate images with correct semantics in the new latent space without finetuning the diffusion model's weights. 
 
 <figure>
-  <img src="assets/dc-gen-figures/analysis.jpg" alt="teaser_page5"/>
+  <img src="assets/dc-gen-figures/analysis.png" alt="teaser_page5"/>
 </figure>
 
 Following embedding alignment, we can fully recover the quality through LoRA finetuning.
 <figure>
-  <img src="assets/dc-gen-figures/pipeline.jpg" alt="teaser_page5"/>
+  <img src="assets/dc-gen-figures/pipeline.png" alt="teaser_page5"/>
 </figure>
 
 ## Getting Started
