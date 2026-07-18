@@ -56,10 +56,10 @@ Modern visual diffusion models are recognized for their superior realism and tex
 
 <table>
 <tr>
-<td align="center">Wan2.1-T2V-14B<br>(<font color="red"><b>27.52</b></font> min/video)</td>
-<td align="center">DC-Gen-Wan2.1-T2V-14B<br>(<font color="red"><b>3.58</b></font> min/video)</td>
-<td align="center">Wan2.1-T2V-14B<br>(<font color="red"><b>27.52</b></font> min/video)</td>
-<td align="center">DC-Gen-Wan2.1-T2V-14B<br>(<font color="red"><b>3.58</b></font> min/video)</td>
+<td align="center"><small>Wan2.1-T2V-14B</small><br>(<font color="red"><b>27.52</b></font> min/video)</td>
+<td align="center"><small>DC-Gen-Wan2.1-T2V-14B</small><br>(<font color="red"><b>3.58</b></font> min/video)</td>
+<td align="center"><small>Wan2.1-T2V-14B</small><br>(<font color="red"><b>27.52</b></font> min/video)</td>
+<td align="center"><small>DC-Gen-Wan2.1-T2V-14B</small><br>(<font color="red"><b>3.58</b></font> min/video)</td>
 </tr>
 <tr>
 <td><img src="assets/dc-gen-figures/comparisons/t2v_wan_3.gif" width="100%"/></td>
@@ -79,10 +79,10 @@ Modern visual diffusion models are recognized for their superior realism and tex
 
 <table>
 <tr>
-<td align="center">Wan2.1-I2V-14B<br>(<font color="red"><b>27.88</b></font> min/video)</td>
-<td align="center">DC-Gen-Wan2.1-I2V-14B<br>(<font color="red"><b>3.67</b></font> min/video)</td>
-<td align="center">Wan2.1-I2V-14B<br>(<font color="red"><b>27.88</b></font> min/video)</td>
-<td align="center">DC-Gen-Wan2.1-I2V-14B<br>(<font color="red"><b>3.67</b></font> min/video)</td>
+<td align="center"><small>Wan2.1-I2V-14B</small><br>(<font color="red"><b>27.88</b></font> min/video)</td>
+<td align="center"><small>DC-Gen-Wan2.1-I2V-14B</small><br>(<font color="red"><b>3.67</b></font> min/video)</td>
+<td align="center"><small>Wan2.1-I2V-14B</small><br>(<font color="red"><b>27.88</b></font> min/video)</td>
+<td align="center"><small>DC-Gen-Wan2.1-I2V-14B</small><br>(<font color="red"><b>3.67</b></font> min/video)</td>
 </tr>
 <tr>
 <td><img src="assets/dc-gen-figures/comparisons/i2v_wan_1.gif" width="100%"/></td>
