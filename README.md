@@ -62,16 +62,16 @@ Modern visual diffusion models are recognized for their superior realism and tex
 <td align="center">DC-Gen-Wan<br>(3.58 min/video)</td>
 </tr>
 <tr>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_3.gif"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_3.gif"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_4.gif"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_4.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_3.gif" width="100%"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_3.gif" width="100%"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_4.gif" width="100%"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_4.gif" width="100%"/></td>
 </tr>
 <tr>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_2.gif"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_2.gif"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_5.gif"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_5.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_2.gif" width="100%"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_2.gif" width="100%"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_5.gif" width="100%"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_5.gif" width="100%"/></td>
 </tr>
 </table>
 
@@ -85,16 +85,16 @@ Modern visual diffusion models are recognized for their superior realism and tex
 <td align="center">DC-Gen-Wan<br>(3.67 min/video)</td>
 </tr>
 <tr>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_1.gif"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_1.gif"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_2.gif"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_2.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_1.gif" width="100%"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_1.gif" width="100%"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_2.gif" width="100%"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_2.gif" width="100%"/></td>
 </tr>
 <tr>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_3.gif"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_3.gif"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_4.gif"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_4.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_3.gif" width="100%"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_3.gif" width="100%"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_4.gif" width="100%"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_4.gif" width="100%"/></td>
 </tr>
 </table>
 
