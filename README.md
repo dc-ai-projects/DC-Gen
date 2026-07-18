@@ -56,10 +56,22 @@ Modern visual diffusion models are recognized for their superior realism and tex
 
 <table>
 <tr>
+<td align="center">Wan2.1-T2V-14B<br>(27.52 min/video)</td>
+<td align="center">DC-Gen-Wan<br>(3.58 min/video)</td>
+<td align="center">Wan2.1-T2V-14B<br>(27.88 min/video)</td>
+<td align="center">DC-Gen-Wan<br>(3.67 min/video)</td>
+</tr>
+<tr>
 <td><img src="assets/dc-gen-figures/comparisons/t2v_wan_3.gif"/></td>
 <td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_3.gif"/></td>
 <td><img src="assets/dc-gen-figures/comparisons/t2v_wan_4.gif"/></td>
 <td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_4.gif"/></td>
+</tr>
+<tr>
+<td align="center">Wan2.1-T2V-14B</td>
+<td align="center">DC-Gen-Wan</td>
+<td align="center">Wan2.1-T2V-14B</td>
+<td align="center">DC-Gen-Wan</td>
 </tr>
 <tr>
 <td><img src="assets/dc-gen-figures/comparisons/t2v_wan_2.gif"/></td>
@@ -73,10 +85,22 @@ Modern visual diffusion models are recognized for their superior realism and tex
 
 <table>
 <tr>
+<td align="center">Wan2.1-I2V-14B</td>
+<td align="center">DC-Gen-Wan</td>
+<td align="center">Wan2.1-I2V-14B</td>
+<td align="center">DC-Gen-Wan</td>
+</tr>
+<tr>
 <td><img src="assets/dc-gen-figures/comparisons/i2v_wan_1.gif"/></td>
 <td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_1.gif"/></td>
 <td><img src="assets/dc-gen-figures/comparisons/i2v_wan_2.gif"/></td>
 <td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_2.gif"/></td>
+</tr>
+<tr>
+<td align="center">Wan2.1-I2V-14B</td>
+<td align="center">DC-Gen-Wan</td>
+<td align="center">Wan2.1-I2V-14B</td>
+<td align="center">DC-Gen-Wan</td>
 </tr>
 <tr>
 <td><img src="assets/dc-gen-figures/comparisons/i2v_wan_3.gif"/></td>
