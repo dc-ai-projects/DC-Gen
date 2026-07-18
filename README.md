@@ -50,21 +50,41 @@ Modern visual diffusion models are recognized for their superior realism and tex
   <img src="assets/dc-gen-figures/appendix_1K.png" alt="teaser_page4"/>
 </figure>
 
-- <ins>Comparison to pre-trained Wan2.1 on 720×1280 Resolution, 81 frames. Left: Wan2.1 (base). Right: DC-Gen-Wan.</ins>
+- <ins>Comparison to pre-trained Wan2.1 on 720×1280 Resolution, 81 frames.</ins>
 
 **Text-to-Video**
 
-| | |
-|:---:|:---:|
-| ![t2v_3](assets/dc-gen-figures/comparisons/t2v_3.gif) | ![t2v_4](assets/dc-gen-figures/comparisons/t2v_4.gif) |
-| ![t2v_2](assets/dc-gen-figures/comparisons/t2v_2.gif) | ![t2v_5](assets/dc-gen-figures/comparisons/t2v_5.gif) |
+<table>
+<tr>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_3.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_3.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_4.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_4.gif"/></td>
+</tr>
+<tr>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_2.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_2.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_5.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_5.gif"/></td>
+</tr>
+</table>
 
 **Image-to-Video**
 
-| | |
-|:---:|:---:|
-| ![i2v_1](assets/dc-gen-figures/comparisons/i2v_1.gif) | ![i2v_2](assets/dc-gen-figures/comparisons/i2v_2.gif) |
-| ![i2v_3](assets/dc-gen-figures/comparisons/i2v_3.gif) | ![i2v_4](assets/dc-gen-figures/comparisons/i2v_4.gif) |
+<table>
+<tr>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_1.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_1.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_2.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_2.gif"/></td>
+</tr>
+<tr>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_3.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_3.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_4.gif"/></td>
+<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_4.gif"/></td>
+</tr>
+</table>
 
 ### Highlight 3: DC-Gen Facilitates Rapid Autoencoder Adaptation
 
