@@ -86,6 +86,11 @@ Modern visual diffusion models are recognized for their superior realism and tex
 </tr>
 </table>
 
+- <ins>Comparison to pre-trained Qwen-Image-Edit on 1K image editing tasks.</ins>
+<figure>
+  <img src="assets/dc-gen-figures/appendix_qwen_1k.png" width="100%" alt="qwen_edit_comparison"/>
+</figure>
+
 ### Highlight 3: DC-Gen Facilitates Rapid Autoencoder Adaptation
 
 Previously, changing the autoencoder required retraining diffusion models from scratch, which was highly inefficient. DC-Gen introduces **Embedding Alignment** to transfer the base model's knowledge to the new latent space. After this alignment, the model can generate images with correct semantics in the new latent space without finetuning the diffusion model's weights. 
