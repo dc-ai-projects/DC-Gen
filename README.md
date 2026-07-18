@@ -50,6 +50,22 @@ Modern visual diffusion models are recognized for their superior realism and tex
   <img src="assets/dc-gen-figures/appendix_1K.png" alt="teaser_page4"/>
 </figure>
 
+- <ins>Comparison to pre-trained Wan2.1 on 720×1280 Resolution, 81 frames. Left: Wan2.1 (base). Right: DC-Gen-Wan.</ins>
+
+**Text-to-Video**
+
+| | |
+|:---:|:---:|
+| ![t2v_3](assets/dc-gen-figures/comparisons/t2v_3.gif) | ![t2v_4](assets/dc-gen-figures/comparisons/t2v_4.gif) |
+| ![t2v_2](assets/dc-gen-figures/comparisons/t2v_2.gif) | ![t2v_5](assets/dc-gen-figures/comparisons/t2v_5.gif) |
+
+**Image-to-Video**
+
+| | |
+|:---:|:---:|
+| ![i2v_1](assets/dc-gen-figures/comparisons/i2v_1.gif) | ![i2v_2](assets/dc-gen-figures/comparisons/i2v_2.gif) |
+| ![i2v_3](assets/dc-gen-figures/comparisons/i2v_3.gif) | ![i2v_4](assets/dc-gen-figures/comparisons/i2v_4.gif) |
+
 ### Highlight 3: DC-Gen Facilitates Rapid Autoencoder Adaptation
 
 Previously, changing the autoencoder required retraining diffusion models from scratch, which was highly inefficient. DC-Gen introduces **Embedding Alignment** to transfer the base model's knowledge to the new latent space. After this alignment, the model can generate images with correct semantics in the new latent space without finetuning the diffusion model's weights. 
