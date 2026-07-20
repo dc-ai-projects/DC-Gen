@@ -1,5 +1,5 @@
 """
-DC-Qwen-Image-Edit pipeline builder.
+DC-Gen-Qwen-Image-Edit pipeline builder.
 Checkpoints auto-downloaded from HuggingFace on first use.
 Files live under upload/DC-Qwen-Image-Edit/DC-Gen-Qwen-Image-Edit/ in the repo;
 they are moved to pretrained_models/DC-Gen-Qwen-Image-Edit-Res1K/ (prefix stripped) after download.
