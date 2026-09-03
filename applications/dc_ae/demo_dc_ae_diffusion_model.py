@@ -23,9 +23,9 @@ import torch
 from omegaconf import MISSING
 from torchvision.utils import save_image
 
-from dc_gen.apps.utils.config import get_config
-from dc_gen.c2i_model_zoo import DCAE_Diffusion_HF
-from dc_gen.models.utils.network import get_dtype_from_str
+from dc_ai.apps.utils.config import get_config
+from dc_ai.apps.utils.dtype import get_dtype_from_str
+from dc_ai.c2i_model_zoo import DCAE_Diffusion_HF
 
 
 @dataclass

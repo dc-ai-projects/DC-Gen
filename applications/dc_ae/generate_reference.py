@@ -23,15 +23,15 @@ from omegaconf import MISSING
 from PIL import Image
 from tqdm import tqdm
 
-from dc_gen.aecore.data_provider.imagenet import (
+from dc_ai.aecore.data_provider.imagenet import (
     ImageNetDataProvider,
     ImageNetEvalDataProviderConfig,
     ImageNetTrainDataProviderConfig,
 )
-from dc_gen.aecore.data_provider.mjhq import MJHQDataProvider, MJHQEvalDataProviderConfig
-from dc_gen.apps.metrics.fid.fid import FIDStats, FIDStatsConfig
-from dc_gen.apps.utils.config import get_config
-from dc_gen.apps.utils.dist import dist_init, get_dist_local_rank, is_master
+from dc_ai.aecore.data_provider.mjhq import MJHQDataProvider, MJHQEvalDataProviderConfig
+from dc_ai.apps.metrics.fid.fid import FIDStats, FIDStatsConfig
+from dc_ai.apps.utils.config import get_config
+from dc_ai.apps.utils.dist import dist_init, get_dist_local_rank, is_master
 
 
 @dataclass

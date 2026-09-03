@@ -1,8 +1,6 @@
-torch
-torchvision
 torchmetrics
 numpy
-
+Pillow
 timm
 einops
 opencv-python
@@ -15,13 +13,19 @@ omegaconf
 ipdb
 wandb[media]
 ray
+imgaug
 torchdiffeq
 imageio[ffmpeg]
+addlicense
 
+matplotlib
 huggingface-hub
 transformers
+mmdet
 onnx
 onnxsim
 onnxruntime
+SentencePiece
+peft
+git+https://github.com/openai/CLIP.git
 
-git+https://github.com/THUDM/ImageReward.git

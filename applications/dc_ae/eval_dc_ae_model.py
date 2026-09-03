@@ -19,8 +19,8 @@ from typing import Optional
 
 from omegaconf import MISSING, OmegaConf
 
-from dc_gen.aecore.trainer import AECoreTrainer, AECoreTrainerConfig
-from dc_gen.apps.utils.config import get_config
+from dc_ai.aecore.trainer import AECoreTrainer, AECoreTrainerConfig
+from dc_ai.apps.utils.config import get_config
 
 
 @dataclass

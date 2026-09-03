@@ -22,9 +22,9 @@ import torch
 from omegaconf import OmegaConf
 from tqdm import tqdm
 
-from dc_gen.apps.metrics.cmmd.cmmd import CMMDStats, CMMDStatsConfig
-from dc_gen.apps.metrics.fid.fid import FIDStats, FIDStatsConfig
-from dc_gen.apps.utils.dist import dist_init
+from dc_ai.apps.metrics.cmmd.cmmd import CMMDStats, CMMDStatsConfig
+from dc_ai.apps.metrics.fid.fid import FIDStats, FIDStatsConfig
+from dc_ai.apps.utils.dist import dist_init
 
 
 @dataclass
@@ -66,9 +66,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-"""
-python -m scripts.data.process_guided_diffusion_reference
-
-python -m scripts.data.process_guided_diffusion_reference input_path=../metric/guided-diffusion/evaluations/VIRTUAL_imagenet512.npz precision_recall_output_path=assets/data/precision_recall/VIRTUAL_imagenet512.npy cmmd_output_path=assets/data/cmmd/VIRTUAL_imagenet512.npy
-"""

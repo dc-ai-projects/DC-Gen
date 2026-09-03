@@ -18,8 +18,8 @@ from dataclasses import dataclass
 
 from omegaconf import MISSING
 
-from dc_gen.apps.utils.config import get_config
-from dc_gen.c2icore.diffusioncore.trainer import DiffusionCoreTrainer, DiffusionCoreTrainerConfig
+from dc_ai.apps.utils.config import get_config
+from dc_ai.c2icore.diffusioncore.trainer import DiffusionCoreTrainer, DiffusionCoreTrainerConfig
 
 
 @dataclass

@@ -44,7 +44,7 @@ We present Deep Compression Autoencoder (DC-AE), a new family of autoencoder mod
 | [dc-ae-f64c128-mix-1.0](https://huggingface.co/mit-han-lab/dc-ae-f64c128-mix-1.0) [dc-ae-f64c128-mix-1.0-diffusers](https://huggingface.co/mit-han-lab/dc-ae-f64c128-mix-1.0-diffusers)     | $128\times\frac{H}{64}\times\frac{W}{64}$   | A Mixture of Datasets |                                                                                    |
 | [dc-ae-f128c512-mix-1.0](https://huggingface.co/mit-han-lab/dc-ae-f128c512-mix-1.0) [dc-ae-f128c512-mix-1.0-diffusers](https://huggingface.co/mit-han-lab/dc-ae-f128c512-mix-1.0-diffusers) | $512\times\frac{H}{128}\times\frac{W}{128}$ | A Mixture of Datasets |                                                                                    |
 | [dc-ae-f32c32-sana-1.0](https://huggingface.co/mit-han-lab/dc-ae-f32c32-sana-1.0) [dc-ae-f32c32-sana-1.0-diffusers](https://huggingface.co/mit-han-lab/dc-ae-f32c32-sana-1.0-diffusers)     | $32\times\frac{H}{32}\times\frac{W}{32}$    | A Mixture of Datasets | The autoencoder used in [SANA](https://github.com/NVlabs/Sana)                     |
-| [dc-ae-f32c32-sana-1.1](https://huggingface.co/mit-han-lab/dc-ae-f32c32-sana-1.1) [dc-ae-f32c32-sana-1.1-diffusers](https://huggingface.co/mit-han-lab/dc-ae-f32c32-sana-1.1-diffusers)     | $32\times\frac{H}{32}\times\frac{W}{32}$    | A Mixture of Datasets | [Improved decoder from dc-ae-f32c32-sana-1.0](../../assets/docs/dc_ae_sana_1.1.md) |
+| [dc-ae-f32c32-sana-1.1](https://huggingface.co/mit-han-lab/dc-ae-f32c32-sana-1.1) [dc-ae-f32c32-sana-1.1-diffusers](https://huggingface.co/mit-han-lab/dc-ae-f32c32-sana-1.1-diffusers)     | $32\times\frac{H}{32}\times\frac{W}{32}$    | A Mixture of Datasets | [Improved decoder from dc-ae-f32c32-sana-1.0](../assets/docs/dc_ae_sana_1.1.md)    |
 
 #### Diffusers Implementation
 
@@ -85,7 +85,7 @@ python -m applications.dc_ae.demo_dc_ae_model_diffusers model=mit-han-lab/dc-ae-
 ```python
 # build DC-AE models
 # full DC-AE model list: https://huggingface.co/collections/mit-han-lab/dc-ae-670085b9400ad7197bb1009b
-from dc_gen.ae_model_zoo import DCAE_HF
+from dc_ai.ae_model_zoo import DCAE_HF
 
 dc_ae = DCAE_HF.from_pretrained(f"mit-han-lab/dc-ae-f64c128-in-1.0")
 
@@ -93,7 +93,7 @@ from PIL import Image
 import torch
 import torchvision.transforms as transforms
 from torchvision.utils import save_image
-from dc_gen.apps.utils.image import DMCrop
+from dc_ai.apps.utils.image import DMCrop
 
 device = torch.device("cuda")
 dc_ae = dc_ae.to(device).eval()
@@ -120,7 +120,7 @@ save_image(y * 0.5 + 0.5, "demo_dc_ae.jpg")
 ```python
 # build DC-AE-Diffusion models
 # full DC-AE-Diffusion model list: https://huggingface.co/collections/mit-han-lab/dc-ae-diffusion-670dbb8d6b6914cf24c1a49d
-from dc_gen.c2i_model_zoo import DCAE_Diffusion_HF
+from dc_ai.c2i_model_zoo import DCAE_Diffusion_HF
 
 dc_ae_diffusion = DCAE_Diffusion_HF.from_pretrained(f"mit-han-lab/dc-ae-f64c128-in-1.0-uvit-h-in-512px-train2000k")
 
@@ -158,7 +158,7 @@ save_image(image_samples * 0.5 + 0.5, "demo_dc_ae_diffusion.jpg", nrow=int(np.sq
 - Generate metadata.
 
 ``` bash
-RAY_DEDUP_LOGS=0 python -m dc_gen.aecore.data_provider.examine dataset=ImageNet_eval
+RAY_DEDUP_LOGS=0 python -m dc_ai.aecore.data_provider.examine dataset=ImageNet_eval
 # results will be saved at assets/data/examination/ImageNet_eval.csv
 ```
 
@@ -206,7 +206,7 @@ Expected results:
 
 ```bash
 # generate metadata
-RAY_DEDUP_LOGS=0 python -m dc_gen.aecore.data_provider.examine dataset=ImageNet_train
+RAY_DEDUP_LOGS=0 python -m dc_ai.aecore.data_provider.examine dataset=ImageNet_train
 
 # ImageNet 256x256
 ## generate reference for FID computation

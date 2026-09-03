@@ -9,45 +9,35 @@
 ## 📖 Overview
 
 <p align="center" border-radius="10px">
-  <img src="assets/dc-gen-figures/teaser2.png" width="100%" alt="teaser"/>
+  <img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/teaser2.png" width="100%" alt="teaser"/>
 </p>
 
 <p align="center">
   <em>DC-Gen delivers high-quality, high-resolution visual generation across text-to-image, text-to-video, image-to-video, and image editing tasks, achieving up to 53.8× speedup over pre-trained diffusion models.</em>
 </p>
 
-## 🎬 Demo
+## 🎬 Overview Video
 
-[![Watch the video](assets/dc-gen-figures/demo_video_first_frame.jpg)](https://www.youtube.com/watch?v=gu9KKtJgbho)
+[![Watch the video](https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/demo_video_first_frame.jpg)](https://www.youtube.com/watch?v=gu9KKtJgbho)
 
 ## 🔥🔥 News
+
 - (🔥 New) \[2026/6/18\] DC-Gen is accepted by ECCV 2026! 🎉
 - (🔥 New) \[2025/9/30\] We released the [DC-Gen technical report](https://arxiv.org/abs/2509.25180) on arXiv.
-- (🔥 New) \[2025/9/30\] We released [DC-AE-Lite](projects/DC-AE-Lite.md). 
+- (🔥 New) \[2025/9/30\] We released [DC-AE-Lite](projects/DC-AE-Lite.md).
 - \[2025/6\] DC-AE 1.5 is accepted by ICCV 2025!
 
 ## 💡 Introduction
+
 DC-Gen is a new acceleration framework for diffusion models. DC-Gen works with any pre-trained diffusion model, boosting efficiency by transferring it into a deeply compressed latent space with lightweight post-training. For example, applying DC-Gen to FLUX.1-Krea takes just 31 H100 GPU days. The resulting DC-Gen-FLUX delivers the same quality as the base model while achieving dramatic gains—53.8× faster inference on H100 at 4K resolution. DC-Gen has been validated across text-to-image, text-to-video, image-to-video, and image editing tasks.
 
-### Highlight 1: DC-Gen Enables Native High-Resolution Image Generation with Exceptional Efficiency
-
-- <ins>FLUX and Z-Image do not support native 4K image generation due to prohibitive training and inference costs. DC-Gen-FLUX and DC-Gen-Z-Image address this limitation by reducing token redundancy with [DC-AE-f64c128](projects/DC-AE.md).</ins>
-<figure>
-  <img src="assets/dc-gen-figures/comp_qualitative.png" alt="teaser_page2"/>
-</figure>
-
-- <ins>The relative speedup of DC-Gen is more significant at higher resolutions, achieving up to 53.8× acceleration on DC-Gen-FLUX.</ins>
-<figure>
-  <img src="assets/dc-gen-figures/comp_speed.png" alt="teaser_page3"/>
-</figure>
-
-### Highlight 2: DC-Gen Maintains Base Model Quality
+### Highlight 1: DC-Gen Maintains Base Model Quality with Faster Inference Speed
 
 Modern visual diffusion models are recognized for their superior realism and text-rendering capabilities but suffer from low throughput. DC-Gen models successfully preserve these qualities while delivering a significant speedup over corresponding base models.
 
 - <ins>Comparison to Previous Models on 1024×1024 Resolution.</ins>
 <figure>
-  <img src="assets/dc-gen-figures/appendix_1K.png" alt="teaser_page4"/>
+  <img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/appendix_1K.jpg" alt="teaser_page4"/>
 </figure>
 
 - <ins>Comparison to pre-trained Wan2.1 on 720×1280 Resolution, 81 frames.</ins>
@@ -62,16 +52,16 @@ Modern visual diffusion models are recognized for their superior realism and tex
 <td align="center"><small>DC-Gen-Wan2.1-T2V-14B</small><br>(<font color="red"><b>3.58</b></font> mins/video)</td>
 </tr>
 <tr>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_3.gif" width="100%"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_3.gif" width="100%"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_4.gif" width="100%"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_4.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/t2v_wan_3.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/t2v_dcgen_3.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/t2v_wan_4.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/t2v_dcgen_4.gif" width="100%"/></td>
 </tr>
 <tr>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_2.gif" width="100%"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_2.gif" width="100%"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_wan_5.gif" width="100%"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/t2v_dcgen_5.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/t2v_wan_2.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/t2v_dcgen_2.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/t2v_wan_5.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/t2v_dcgen_5.gif" width="100%"/></td>
 </tr>
 </table>
 
@@ -85,99 +75,86 @@ Modern visual diffusion models are recognized for their superior realism and tex
 <td align="center"><small>DC-Gen-Wan2.1-I2V-14B</small><br>(<font color="red"><b>3.67</b></font> mins/video)</td>
 </tr>
 <tr>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_1.gif" width="100%"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_1.gif" width="100%"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_2.gif" width="100%"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_2.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/i2v_wan_1.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/i2v_dcgen_1.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/i2v_wan_2.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/i2v_dcgen_2.gif" width="100%"/></td>
 </tr>
 <tr>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_3.gif" width="100%"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_3.gif" width="100%"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_wan_4.gif" width="100%"/></td>
-<td><img src="assets/dc-gen-figures/comparisons/i2v_dcgen_4.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/i2v_wan_3.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/i2v_dcgen_3.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/i2v_wan_4.gif" width="100%"/></td>
+<td><img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comparisons/i2v_dcgen_4.gif" width="100%"/></td>
 </tr>
 </table>
 
 - <ins>Comparison to pre-trained Qwen-Image-Edit on 1K image editing tasks.</ins>
 <figure>
-  <img src="assets/dc-gen-figures/appendix_qwen_1k.png" width="100%" alt="qwen_edit_comparison"/>
+  <img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/appendix_qwen_1k.jpg" width="100%" alt="qwen_edit_comparison"/>
+</figure>
+
+- <ins>The relative speedup of DC-Gen is more significant at higher resolutions, achieving up to 53.8× acceleration on DC-Gen-FLUX.</ins>
+<figure>
+  <img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comp_speed.png" alt="teaser_page3"/>
+</figure>
+
+### Highlight 2: DC-Gen Enables Native Super-Resolution Image Generation with Exceptional Efficiency
+
+- <ins>FLUX and Z-Image do not support native 4K image generation due to prohibitive training and inference costs. DC-Gen-FLUX and DC-Gen-Z-Image address this limitation by reducing token redundancy with [DC-AE-f64c128](projects/DC-AE.md).</ins>
+<figure>
+  <img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/comp_qualitative.jpg" alt="teaser_page2"/>
 </figure>
 
 ### Highlight 3: DC-Gen Facilitates Rapid and Stable Autoencoder Adaptation
 
-Previously, changing the autoencoder required retraining diffusion models from scratch, which was highly inefficient. DC-Gen introduces **Embedding Alignment** to transfer the base model's knowledge to the new latent space. After this alignment, the model can perform visual generation with correct semantics in the new latent space without finetuning the diffusion model's weights. With only a few steps of end-to-end fine-tuning, the DC-Gen models can already achieve visual generation quality comparable to pre-trained models. 
+Previously, changing the autoencoder required retraining diffusion models from scratch, which was highly inefficient. DC-Gen introduces **Embedding Alignment** to transfer the base model's knowledge to the new latent space. After this alignment, the model can perform visual generation with correct semantics in the new latent space without fine-tuning the diffusion model's weights. With only a few steps of end-to-end fine-tuning, the DC-Gen models can already achieve visual generation quality comparable to pre-trained models.
 
 <figure>
-  <img src="assets/dc-gen-figures/analysis.png" alt="teaser_page5"/>
+  <img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/analysis.png" alt="teaser_page5"/>
 </figure>
 
-Following embedding alignment, we can fully recover the quality through LoRA finetuning.
+Following embedding alignment, we can fully recover the quality through LoRA fine-tuning.
 <figure>
-  <img src="assets/dc-gen-figures/pipeline.png" alt="teaser_page5"/>
+  <img src="https://huggingface.co/dc-ai/DC-Gen-README/resolve/main/assets/pipeline.png" alt="teaser_page5"/>
 </figure>
 
 ## Getting Started
 
 ```bash
-conda create -n dc_gen python=3.10
-conda activate dc_gen
+conda create -n dc_ai python=3.10
+conda activate dc_ai
+pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cu128 # please install torch according to your cuda version
+# for arm architecture, use
+# pip install torch==2.8.0 torchvision==0.23.0 --index-url https://download.pytorch.org/whl/cu129
 pip install -U -r requirements.txt
+pip install flash-attn --no-build-isolation
+# if you failed to import flash_attn, please uninstall and build from source
+# pip uninstall flash_attn
+# pip install ninja
+# git clone git@github.com:Dao-AILab/flash-attention.git
+# cd flash-attention
+# python setup.py install
+
+pre-commit install
 ```
 
-## Content
+## Offline Inference
 
-### DC-Gen CLI
+Apart from the Online Demo we provided, you can also run DC-Gen locally with a simple command-line interface. This codebase supports text-to-image (1K and 4K), text-to-video, image-to-video, and instruction-based image editing. See [applications/dc_gen/inference_demo/README.md](applications/dc_gen/inference_demo/README.md) for details.
 
-Run DC-Gen locally with a simple command-line interface. Supports text-to-image (1K and 4K), text-to-video, image-to-video, and instruction-based image editing.
+## Accelerate Pre-trained Diffusion Models with DC-Gen
 
-```bash
-export HF_TOKEN=<your_hf_token>
-python generate.py task=<task> prompt="<text>" save_path=<path> [options]
-```
-
-| Task | Description | VAE |
-|------|-------------|-----|
-| `t2i_1k` | Text-to-image, 1K resolution | DC-AE-f32c32 |
-| `t2i_4k` | Text-to-image, 4K resolution | DC-AE-1.5-f64c128 |
-| `t2v` | Text-to-video, 720p | DC-AE-V-f32t4c32 |
-| `i2v` | Image-to-video, 720p | DC-AE-V-f32t4c32 |
-| `edit` | Instruction-based image editing | DC-AE-f32c32 |
-
-**Examples:**
-
-```bash
-# Text-to-image 1K
-python generate.py task=t2i_1k prompt="A cat lazily lying in a dog's arms in the sun" save_path=out.jpg
-
-# Text-to-image 4K
-python generate.py task=t2i_4k prompt="A mountain lake at dawn, mist rising" save_path=out.jpg width=4096 height=4096
-
-# Text-to-video
-python generate.py task=t2v prompt="A white cat wearing sunglasses surfs on a wave" save_path=out.mp4
-
-# Image-to-video
-python generate.py task=i2v input_image_path=cat.jpg prompt="The cat waves its paw" save_path=out.mp4
-
-# Image editing
-python generate.py task=edit input_image_path=photo.jpg prompt="Make the background snowy" save_path=edit.png
-
-# Non-English prompt with auto-expand
-python generate.py task=t2i_1k prompt="一只猫慵懒地躺在一只狗的怀里晒太阳。" save_path=out.jpg use_expander=yes
-```
-
-Model weights are downloaded automatically on first use from HuggingFace Hub into `pretrained_models/`.
-
-### Deep Compression Autoencoder
-- [ICLR 2025] DC-AE 1.0: [Getting Started](projects/DC-AE.md), [Website](https://hanlab.mit.edu/projects/dc-ae)
-- [ICCV 2025] DC-AE 1.5: [Getting Started](projects/DC-AE-1.5.md), [Website](https://hanlab.mit.edu/projects/dc-ae-1-5), [AE Demo](https://dc-gen.hanlab.ai/), [T2I Demo](https://dc-gen.hanlab.ai/dc_gen_sana_f64c128/)
-- DC-AE-Lite: [Getting Started](projects/DC-AE-Lite.md)
+We provide step-by-step guides for applying DC-Gen to FLUX, Qwen-Image-Edit, Wan2.1, and Z-Image, covering data preparation, embedding alignment, and LoRA fine-tuning. See [projects/DC-Gen](projects/DC-Gen) for details.
 
 ## Contact
 
 [Han Cai](http://hancai.ai/)
 
 ## Related Projects
-- [DC-VideoGen: Efficient Video Generation with Deep Compression Video Autoencoder](https://github.com/dc-ai-projects/DC-VideoGen)
+
+- [ICLR 2025] DC-AE 1.0: [Getting Started](projects/DC-AE.md), [Website](https://hanlab.mit.edu/projects/dc-ae)
+- [ICCV 2025] DC-AE 1.5: [Getting Started](projects/DC-AE-1.5.md), [Website](https://hanlab.mit.edu/projects/dc-ae-1-5), [AE Demo](https://dc-gen.hanlab.ai/), [T2I Demo](https://dc-gen.hanlab.ai/dc_gen_sana_f64c128/)
+- DC-AE-Lite: [Getting Started](projects/DC-AE-Lite.md)
 
 ## Reference
 
@@ -202,9 +179,7 @@ Model weights are downloaded automatically on first use from HuggingFace Hub int
   journal={arXiv preprint arXiv:2508.00413},
   year={2025}
 }
-```
 
-```bibtex
 @misc{zou2025dcaelite,
   title  = {DC-AE-Lite},
   author = {Zou, Dongyun and Chen, Junyu and He, Wenkun and Chen, Junsong and Xie, Enze and Han, Song and Cai, Han},

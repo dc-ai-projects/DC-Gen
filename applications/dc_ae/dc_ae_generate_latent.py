@@ -27,11 +27,12 @@ from omegaconf import MISSING, OmegaConf
 from torchvision.utils import save_image
 from tqdm import tqdm
 
-from dc_gen.ae_model_zoo import DCAE_HF, REGISTERED_DCAE_MODEL, REGISTERED_SD_VAE_MODEL, AutoencoderKL
-from dc_gen.aecore.models.dc_ae import DCAE
-from dc_gen.apps.data_provider.sampler import DistributedRangedSampler
-from dc_gen.apps.utils.config import get_config
-from dc_gen.apps.utils.dist import (
+from dc_ai.ae_model_zoo import DCAE_HF, REGISTERED_DCAE_MODEL, REGISTERED_SD_VAE_MODEL, AutoencoderKL
+from dc_ai.aecore.autoencoder import Autoencoder, AutoencoderConfig
+from dc_ai.aecore.models.dc_ae import DCAE
+from dc_ai.apps.data_provider.sampler import DistributedRangedSampler
+from dc_ai.apps.utils.config import get_config
+from dc_ai.apps.utils.dist import (
     dist_barrier,
     dist_init,
     get_dist_local_rank,
@@ -40,9 +41,8 @@ from dc_gen.apps.utils.dist import (
     is_master,
     sync_tensor,
 )
-from dc_gen.apps.utils.image import CustomImageFolder, DMCrop
-from dc_gen.c2icore.autoencoder import Autoencoder, AutoencoderConfig
-from dc_gen.models.utils.network import get_dtype_from_str
+from dc_ai.apps.utils.dtype import get_dtype_from_str
+from dc_ai.apps.utils.image import CustomImageFolder, DMCrop
 
 
 @dataclass

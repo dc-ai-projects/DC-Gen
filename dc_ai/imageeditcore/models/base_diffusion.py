@@ -1,0 +1,107 @@
+# Copyright 2025 NVIDIA CORPORATION & AFFILIATES
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+
+from dataclasses import dataclass
+from typing import Any, Optional
+
+import torch
+from omegaconf import MISSING
+
+from .base import BaseImageEditModel, BaseImageEditModelConfig
+
+
+@dataclass
+class BaseImageEditDiffusionModelConfig(BaseImageEditModelConfig):
+    adaptive_channel: bool = False
+
+    eval_scheduler: str = MISSING
+    train_scheduler: str = MISSING
+    num_inference_steps: int = MISSING
+    train_sampling_steps: int = 1000
+
+    guidance_type: str = "classifier-free"
+    pag_applied_layers: tuple[int, ...] = (8,)
+    interval_guidance: tuple[float, float] = (0.0, 1.0)
+    flow_shift: float = 3.0
+    use_dynamic_shifting: bool = True
+
+
+class BaseImageEditDiffusionModel(BaseImageEditModel):
+    def __init__(self, cfg: BaseImageEditDiffusionModelConfig):
+        super().__init__(cfg)
+        self.cfg: BaseImageEditDiffusionModelConfig
+
+        if cfg.eval_scheduler == "FluxScheduler":
+            from ...t2icore.scheduler.flux_scheduler import FluxScheduler
+
+            self.eval_scheduler = FluxScheduler(
+                num_inference_steps=cfg.num_inference_steps,
+                shift=cfg.flow_shift,
+                use_dynamic_shifting=cfg.use_dynamic_shifting,
+            )
+        elif cfg.eval_scheduler == "Flux2Scheduler":
+            from ...t2icore.scheduler.flux2_scheduler import Flux2Scheduler
+
+            self.eval_scheduler = Flux2Scheduler(
+                num_inference_steps=cfg.num_inference_steps,
+                latent_seq_len=getattr(cfg, "latent_seq_len", None),
+                base_seq_len=getattr(cfg, "base_seq_len", 4096),
+            )
+        else:
+            raise NotImplementedError(f"eval_scheduler {cfg.eval_scheduler} is not supported")
+
+        if cfg.train_scheduler == "FlowMatchEulerDiscreteScheduler":
+            from ...t2icore.scheduler.flux_scheduler import (
+                FlowMatchEulerDiscreteScheduler,
+                FlowMatchEulerDiscreteSchedulerConfig,
+            )
+
+            flow_match_scheduler_cfg = FlowMatchEulerDiscreteSchedulerConfig(
+                num_train_timesteps=self.cfg.train_sampling_steps, use_dynamic_shifting=True
+            )
+            self.train_scheduler = FlowMatchEulerDiscreteScheduler(flow_match_scheduler_cfg)
+        elif cfg.train_scheduler == "FlowMatchEulerDiscreteSchedulerFlux2":
+            pass
+        else:
+            raise NotImplementedError(f"train_scheduler {cfg.train_scheduler} is not supported")
+
+    def forward_without_cfg(
+        self, x: torch.Tensor, t: torch.Tensor, y: torch.Tensor, image_feature: torch.Tensor, mask=None
+    ) -> tuple[torch.Tensor, dict]:
+        raise NotImplementedError
+
+    @torch.no_grad()
+    def generate(
+        self,
+        text_embed_info: dict[str, dict[str, torch.Tensor]],
+        neg_text_embed_info: dict[str, dict[str, torch.Tensor]],
+        image_embed_info: dict[str, Any],
+        noise: Optional[torch.Tensor] = None,
+        cfg_scale: float = 4.5,
+        pag_scale: float = 1.0,
+        generator: Optional[torch.Generator] = None,
+    ) -> torch.Tensor:
+        raise NotImplementedError
+
+    def forward_train(
+        self,
+        x: torch.Tensor,
+        text_embed_info: dict[str, dict[str, torch.Tensor]],
+        neg_text_embed_info: dict[str, dict[str, torch.Tensor]],
+        image_embed_info: dict[str, Any],
+        generator: Optional[torch.Generator] = None,
+    ) -> tuple[dict[int, torch.Tensor], dict]:
+        raise NotImplementedError

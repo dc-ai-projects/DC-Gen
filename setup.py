@@ -17,13 +17,14 @@
 from setuptools import find_packages, setup
 
 setup(
-    name="dc_gen",
+    name="dc_ai",
     packages=find_packages(),
     install_requires=[
         "torch",
         "torchvision",
         "torchmetrics",
         "numpy",
+        "Pillow",
         "timm",
         "einops",
         "opencv-python",

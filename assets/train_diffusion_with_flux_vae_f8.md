@@ -4,11 +4,13 @@ pip install sentencepiece
 ```
 
 # download flux_vae
+
 ``` bash
 python -c "import torch; from diffusers import FluxPipeline; pipe = FluxPipeline.from_pretrained('black-forest-labs/FLUX.1-schnell', torch_dtype=torch.bfloat16)"
 ```
 
 # extract latent
+
 ``` bash
 torchrun --nnodes 1 --nproc_per_node=8 -m applications.dc_ae.dc_ae_generate_latent resolution=512 \
     image_root_path=~/dataset/imagenet/train batch_size=64 \
@@ -17,6 +19,7 @@ torchrun --nnodes 1 --nproc_per_node=8 -m applications.dc_ae.dc_ae_generate_late
 ```
 
 # train uvit_s
+
 ``` bash
 torchrun --nnodes 1 --nproc_per_node=8 -m applications.dc_ae.train_dc_ae_diffusion_model resolution=512 \
     train_dataset=latent_imagenet latent_imagenet.batch_size=128 latent_imagenet.data_dir=assets/data/latent/flux_vae/imagenet_512 \

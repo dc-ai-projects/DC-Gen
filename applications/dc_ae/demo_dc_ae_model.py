@@ -23,7 +23,7 @@ from omegaconf import MISSING, OmegaConf
 from PIL import Image
 from torchvision.utils import save_image
 
-from dc_gen.ae_model_zoo import DCAE_HF
+from dc_ai.ae_model_zoo import DCAE_HF
 
 
 @dataclass
@@ -66,9 +66,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-"""
-python -m applications.dc_ae.demo_dc_ae_model model=mit-han-lab/dc-ae-f64c128-in-1.0 run_dir=demo/dc-ae-f64c128-in-1.0 input_path_list=[assets/fig/girl.png]
-
-python -m applications.dc_ae.demo_dc_ae_model model=mit-han-lab/dc-ae-f32c32-in-1.0 run_dir=demo/dc-ae-f32c32-in-1.0 input_path_list=[/home/junyuc/dataset/RUGD/RUGD_sample-data/images/creek_00001.png,/home/junyuc/dataset/RUGD/RUGD_sample-data/images/park-1_00001.png,/home/junyuc/dataset/RUGD/RUGD_sample-data/images/trail_00001.png,/home/junyuc/dataset/RUGD/RUGD_sample-data/images/village_00003.png]
-"""

@@ -1,0 +1,30 @@
+default_install_hook_types:
+  - pre-commit
+  - post-checkout
+
+default_stages:
+  - pre-commit
+
+repos:
+  - repo: https://github.com/pycqa/isort
+    rev: 6.1.0
+    hooks:
+      - id: isort
+        name: isort
+
+  - repo: https://github.com/psf/black
+    rev: 25.9.0
+    hooks:
+      - id: black
+        name: black
+
+  - repo: local
+    hooks:
+      - id: setup-worktree-links
+        name: Set up worktree links
+        entry: scripts/setup_worktree_links.sh
+        language: script
+        always_run: true
+        pass_filenames: false
+        stages:
+          - post-checkout

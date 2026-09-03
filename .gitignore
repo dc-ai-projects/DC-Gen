@@ -3,10 +3,12 @@
 
 __pycache__/
 
+.cache/
 .dev/
 .exp/
 .demo/
 .gradio/
+.claude/
 
 wandb
 tmp/
@@ -15,28 +17,26 @@ temp/
 
 assets/checkpoints
 assets/data
+assets/dataset
 assets/export_models
 assets/fig
 assets/video
+assets/venvs
 
-exp_junyuc
-exp_hcai
-exp_wenkunh
-exp_dongyun
-exp_yujlin
-exp_yuchao
-exp_jasonlu
+/exp*
 
+*.png
+*.jpg
 *.pth
 *.mp4
 /*.pt
-/*.txt
 
-dc_gen/apps/visualization
-dc_gen/staecore/models/cosmos_tokenizer_modules
-dc_gen/c2icore/diffusioncore/efficiency/onnx/
-dc_gen/c2icore/diffusioncore/efficiency/training_efficiency/
-dc_gen/c2icore/diffusioncore/efficiency/*.json
+dc_ai/staecore/efficiency/block_efficiency_cache.json
+dc_ai/c2icore/diffusioncore/efficiency/onnx/
+dc_ai/c2icore/diffusioncore/efficiency/training_efficiency/
+dc_ai/c2icore/diffusioncore/efficiency/*.json
 
-dc_gen/t2icore/t2idiffusioncore/efficiency/*.json
-dc_gen/t2icore/t2idiffusioncore/efficiency/onnx/
+dc_ai/t2icore/efficiency/*.json
+dc_ai/t2icore/efficiency/onnx/
+
+applications/dc_gen/inference_demo/pretrained_models
