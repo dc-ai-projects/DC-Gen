@@ -3,6 +3,7 @@
 <div align="center">
   <a href="https://hanlab.mit.edu/projects/dc-gen/"><img src="https://img.shields.io/static/v1?label=Website&message=DC-Gen&color=darkred&logo=github-pages"></a> &ensp;
   <a href="https://arxiv.org/abs/2509.25180"><img src="https://img.shields.io/static/v1?label=arXiv&message=DC-Gen&color=red&logo=arxiv"></a> &ensp;
+  <a href="https://kxn6bflf-dc-gen-demo.xenon.lepton.run/"><img src="https://img.shields.io/static/v1?label=Demo&message=DC-Gen&color=blue&logo=googlechrome"></a> &ensp;
   <!-- <a href="https://huggingface.co/collections/dc-ai/dc-gen-6899bb095082244f396203e1"><img src="https://img.shields.io/static/v1?label=HuggingFace&message=DC-AI&color=yellow&logo=huggingface"></a> &ensp; -->
 </div>
 
