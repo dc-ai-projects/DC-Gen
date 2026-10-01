@@ -27,7 +27,7 @@ from .base import STAECoreDataProvider, STAECoreDataProviderConfig
 @dataclass
 class UCF101DataProviderConfig(STAECoreDataProviderConfig):
     name: str = "UCF101"
-    data_dir: str = "~/dataset/ucf101/mp4"
+    data_dir: str = "assets/dataset/ucf101/mp4"
     metadata_path: str = "assets/data/examination/UCF101.csv"
     split: Optional[str] = None
 

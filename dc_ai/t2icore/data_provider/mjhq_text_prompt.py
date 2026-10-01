@@ -31,9 +31,9 @@ class MJHQTextPromptDataProviderConfig(T2ICoreEvalDataProviderConfig):
     name: str = "MJHQTextPrompt"
     resolution: int = 512
     num_samples: int = 30000
-    data_dir: str = "~/dataset/MJHQ-30K/imgs"
-    meta_path: str = "~/dataset/MJHQ-30K/meta_data.json"
-    fid_ref_path: str = "~/dataset/MJHQ-30K/MJHQ_30K_${.resolution}px_fid_embeddings_30000.npz"
+    data_dir: str = "assets/dataset/MJHQ-30K/imgs"
+    meta_path: str = "assets/dataset/MJHQ-30K/meta_data.json"
+    fid_ref_path: str = "assets/dataset/MJHQ-30K/MJHQ_30K_${.resolution}px_fid_embeddings_30000.npz"
 
 
 class MJHQTextPromptDataset(Dataset):

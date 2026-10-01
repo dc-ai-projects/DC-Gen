@@ -69,7 +69,7 @@ class VideoDataProviderExaminator(Worker):
 
         self.dataset = possible_datasets[cfg.dataset]()
         if cfg.dataset == "UCF101":
-            with open(os.path.expanduser("~/dataset/ucf101/testlist01.txt"), "r") as f:
+            with open(os.path.expanduser("assets/dataset/ucf101/testlist01.txt"), "r") as f:
                 eval_split_list = []
                 for line in f.readlines():
                     eval_split_list.append(line.rstrip()[:-4] + ".mp4")

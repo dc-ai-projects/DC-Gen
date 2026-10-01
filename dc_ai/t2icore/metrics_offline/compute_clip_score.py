@@ -37,7 +37,7 @@ class ComputeCLIPScoreDataset(Dataset):
         self.data_dir = data_dir
         self.suffix = suffix
         if setting == "MJHQ-30K":
-            with open(os.path.expanduser("~/dataset/MJHQ-30K/meta_data.json"), "r") as f:
+            with open(os.path.expanduser("assets/dataset/MJHQ-30K/meta_data.json"), "r") as f:
                 self.meta_data = list(json.load(f).items())
         else:
             raise ValueError(f"Setting {setting} not supported")

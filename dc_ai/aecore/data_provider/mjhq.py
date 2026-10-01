@@ -32,7 +32,7 @@ class MJHQDataProviderConfig(AECoreDataProviderConfig):
 class MJHQEvalDataProviderConfig(MJHQDataProviderConfig):
     name: str = "MJHQEval"
     resolution: int = 256
-    data_dir: str = "~/dataset/MJHQ-30K/imgs"
+    data_dir: str = "assets/dataset/MJHQ-30K/imgs"
     vlm_caption_path: str = "assets/data/vlm_caption/OpenGVLab_InternVL2-26B_MJHQEval.csv"
 
     def __post_init__(self):

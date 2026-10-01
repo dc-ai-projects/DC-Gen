@@ -25,43 +25,43 @@ from .staecore.models.dc_ae_v import (
 REGISTERED_DCAEV_MODEL: dict[str, tuple[Callable[[str, str], DCAEVConfig], Optional[str]]] = {
     "dc-ae-v-1.0-f32t4c32": (
         dc_ae_v_f32t4_chunk_causal,
-        "assets/checkpoints/dc_videogen/dc_ae_v/dc-ae-v-1.0-f32t4c32.pt",
+        "assets/checkpoints/dc_gen/dc_ae_v/dc-ae-v-1.0-f32t4c32.pt",
     ),
     "dc-ae-v-1.0-f32t4c64": (
         dc_ae_v_f32t4_chunk_causal,
-        "assets/checkpoints/dc_videogen/dc_ae_v/dc-ae-v-1.0-f32t4c64.pt",
+        "assets/checkpoints/dc_gen/dc_ae_v/dc-ae-v-1.0-f32t4c64.pt",
     ),
     "dc-ae-v-1.0-f32t4c128": (
         dc_ae_v_f32t4_chunk_causal,
-        "assets/checkpoints/dc_videogen/dc_ae_v/dc-ae-v-1.0-f32t4c128.pt",
+        "assets/checkpoints/dc_gen/dc_ae_v/dc-ae-v-1.0-f32t4c128.pt",
     ),
     "dc-ae-v-1.0-f32t4c256": (
         dc_ae_v_f32t4_chunk_causal,
-        "assets/checkpoints/dc_videogen/dc_ae_v/dc-ae-v-1.0-f32t4c256.pt",
+        "assets/checkpoints/dc_gen/dc_ae_v/dc-ae-v-1.0-f32t4c256.pt",
     ),
     "dc-ae-v-1.0-f64t4c128": (
         dc_ae_v_f64t4_chunk_causal,
-        "assets/checkpoints/dc_videogen/dc_ae_v/dc-ae-v-1.0-f64t4c128.pt",
+        "assets/checkpoints/dc_gen/dc_ae_v/dc-ae-v-1.0-f64t4c128.pt",
     ),
     "dc-ae-v-1.0-f32t4c32-bf16": (
         dc_ae_v_f32t4_chunk_causal,
-        "assets/checkpoints/dc_videogen/dc_ae_v/dc-ae-v-1.0-f32t4c32-bf16.pt",
+        "assets/checkpoints/dc_gen/dc_ae_v/dc-ae-v-1.0-f32t4c32-bf16.pt",
     ),
     "dc-ae-v-1.0-f32t4c64-bf16": (
         dc_ae_v_f32t4_chunk_causal,
-        "assets/checkpoints/dc_videogen/dc_ae_v/dc-ae-v-1.0-f32t4c64-bf16.pt",
+        "assets/checkpoints/dc_gen/dc_ae_v/dc-ae-v-1.0-f32t4c64-bf16.pt",
     ),
     "dc-ae-v-1.0-f32t4c128-bf16": (
         dc_ae_v_f32t4_chunk_causal,
-        "assets/checkpoints/dc_videogen/dc_ae_v/dc-ae-v-1.0-f32t4c128-bf16.pt",
+        "assets/checkpoints/dc_gen/dc_ae_v/dc-ae-v-1.0-f32t4c128-bf16.pt",
     ),
     "dc-ae-v-1.0-f32t4c256-bf16": (
         dc_ae_v_f32t4_chunk_causal,
-        "assets/checkpoints/dc_videogen/dc_ae_v/dc-ae-v-1.0-f32t4c256-bf16.pt",
+        "assets/checkpoints/dc_gen/dc_ae_v/dc-ae-v-1.0-f32t4c256-bf16.pt",
     ),
     "dc-ae-v-1.0-f64t4c128-bf16": (
         dc_ae_v_f64t4_chunk_causal,
-        "assets/checkpoints/dc_videogen/dc_ae_v/dc-ae-v-1.0-f64t4c128-bf16.pt",
+        "assets/checkpoints/dc_gen/dc_ae_v/dc-ae-v-1.0-f64t4c128-bf16.pt",
     ),
     #################################################################################################
 }

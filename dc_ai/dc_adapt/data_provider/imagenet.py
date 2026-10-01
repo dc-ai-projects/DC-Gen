@@ -92,7 +92,7 @@ class DCAdaptImageNetImageProviderConfig(DCAdaptDataProviderConfig):
     drop_last: bool = True
     shuffle: bool = True
 
-    data_dir: str = "~/dataset/imagenet/train"
+    data_dir: str = "assets/dataset/imagenet/train"
     resolution: int = 512
 
 

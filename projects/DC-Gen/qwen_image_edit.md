@@ -56,10 +56,17 @@ torchrun --nnodes=1 --nproc_per_node=8 -m dc_ai.imageeditcore.trainer mode=eval 
 
 ## Prepare Training Data
 
-Please download the example of the processed Pico-Banana data (`single_turn_processed`) and the Qwen-Image-Edit generated data (`qwen_image_gen`) from https://drive.google.com/drive/folders/1kV8r8EH1rdmy2VNrkqZmYt3X4wWvzGBZ to an appropriate path.
+Download the processed Pico-Banana examples (`single_turn_processed`) and Qwen-Image-Edit generated examples (`qwen_image_gen`) from [DC-Gen-Data](https://huggingface.co/datasets/dc-ai/DC-Gen-Data). These are training samples, not the complete training dataset. Each command downloads only the selected subfolder and preserves its directory structure.
 
 ```bash
-PICO_BANANA_DATA_PATH=<path_to_pico_banana_data>
+hf download --repo-type dataset dc-ai/DC-Gen-Data \
+    --include "train_example/qwen-image-edit/single_turn_processed/*" \
+    --local-dir assets/dataset/dc-gen-data
+hf download --repo-type dataset dc-ai/DC-Gen-Data \
+    --include "train_example/qwen-image-edit/qwen_image_gen/*" \
+    --local-dir assets/dataset/dc-gen-data
+
+PICO_BANANA_DATA_PATH=assets/dataset/dc-gen-data/train_example/qwen-image-edit
 ```
 
 ### Step 1: Generate Meta for RGB Data

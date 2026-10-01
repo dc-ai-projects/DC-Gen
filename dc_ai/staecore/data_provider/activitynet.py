@@ -35,7 +35,7 @@ class ActivityNet12TestDataProviderConfig(ActivityNetDataProviderConfig):
     name: str = "ActivityNet12Test"
     size_transform: str = "TemporalCenterCropSpatialDMCrop"
     metadata_path: Optional[str] = "assets/data/examination/ActivityNet12Test.csv"
-    data_dir: str = "~/dataset/activitynet/v1-2/test"
+    data_dir: str = "assets/dataset/activitynet/v1-2/test"
 
 
 @dataclass
@@ -43,7 +43,7 @@ class ActivityNet13TestDataProviderConfig(ActivityNetDataProviderConfig):
     name: str = "ActivityNet13Test"
     size_transform: str = "TemporalCenterCropSpatialDMCrop"
     metadata_path: Optional[str] = "assets/data/examination/ActivityNet13Test.csv"
-    data_dir: str = "~/dataset/activitynet/v1-3/test"
+    data_dir: str = "assets/dataset/activitynet/v1-3/test"
 
     def __post_init__(self):
         self.fvd_ref_path: str = f"assets/data/fvd/activitynet_1_3_test_{self.h}_{self.w}_{self.t}_{self.fps}.npz"
@@ -54,7 +54,7 @@ class ActivityNet13TestLongVideoDataProviderConfig(ActivityNetDataProviderConfig
     name: str = "ActivityNet13TestLongVideo"
     size_transform: str = "TemporalCenterCropSpatialDMCrop"
     metadata_path: Optional[str] = "assets/data/examination/ActivityNet13Test.csv"
-    data_dir: str = "~/dataset/activitynet/v1-3/test"
+    data_dir: str = "assets/dataset/activitynet/v1-3/test"
     min_t: Optional[int] = 1000
     end_index: Optional[int] = 1000
 

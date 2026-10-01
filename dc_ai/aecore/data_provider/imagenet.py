@@ -33,7 +33,7 @@ class ImageNetDataProviderConfig(AECoreDataProviderConfig):
 class ImageNetEvalDataProviderConfig(ImageNetDataProviderConfig):
     name: str = "ImageNetEval"
     resolution: int = 256
-    data_dir: str = "~/dataset/imagenet/val"
+    data_dir: str = "assets/dataset/imagenet/val"
     metadata_path: str = "assets/data/examination/ImageNet_eval.csv"
 
     def __post_init__(self):
@@ -43,7 +43,7 @@ class ImageNetEvalDataProviderConfig(ImageNetDataProviderConfig):
 @dataclass
 class ImageNetTrainDataProviderConfig(ImageNetDataProviderConfig):
     name: str = "ImageNetTrain"
-    data_dir: str = "~/dataset/imagenet/train"
+    data_dir: str = "assets/dataset/imagenet/train"
     shuffle: bool = True
     drop_last: bool = True
     metadata_path: str = "assets/data/examination/ImageNet_train.csv"

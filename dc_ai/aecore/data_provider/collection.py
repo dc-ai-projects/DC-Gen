@@ -36,8 +36,8 @@ from .imagenet import (
 from .mjhq import MJHQDataProvider, MJHQEvalDataProviderConfig
 
 possible_datasets: dict[str, Callable[..., Dataset]] = {
-    "ImageNet_eval": partial(MultiResolutionImageFolder, root="~/dataset/imagenet/val"),
-    "ImageNet_train": partial(MultiResolutionImageFolder, root="~/dataset/imagenet/train"),
+    "ImageNet_eval": partial(MultiResolutionImageFolder, root="assets/dataset/imagenet/val"),
+    "ImageNet_train": partial(MultiResolutionImageFolder, root="assets/dataset/imagenet/train"),
 }
 
 

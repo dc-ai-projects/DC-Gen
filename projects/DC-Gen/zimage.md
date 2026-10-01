@@ -50,33 +50,40 @@ python -m applications.dc_gen.manual_prompt \
 
 ## Prepare Evaluation Benchmark
 
+Run these commands from the repository root. MJHQ-30K images, prompt metadata, and FID reference statistics are stored under `assets/dataset/MJHQ-30K`.
+
 ```bash
 hf download --repo-type dataset playgroundai/MJHQ-30K \
     mjhq30k_imgs.zip meta_data.json \
-    --local-dir ~/dataset/MJHQ-30K
-cd ~/dataset/MJHQ-30K && unzip mjhq30k_imgs.zip -d imgs
-cd -
+    --local-dir assets/dataset/MJHQ-30K
+unzip assets/dataset/MJHQ-30K/mjhq30k_imgs.zip -d assets/dataset/MJHQ-30K/imgs
 
 torchrun --nnodes=1 --nproc_per_node=8 -m dc_ai.apps.metrics.fid.compute_fid \
     resolution=512 suffix=".jpg" \
-    data_dir=~/dataset/MJHQ-30K/imgs \
-    fid.save_path=~/dataset/MJHQ-30K/MJHQ_30K_512px_fid_embeddings_30000.npz
+    data_dir=assets/dataset/MJHQ-30K/imgs \
+    fid.save_path=assets/dataset/MJHQ-30K/MJHQ_30K_512px_fid_embeddings_30000.npz
 torchrun --nnodes=1 --nproc_per_node=8 -m dc_ai.apps.metrics.fid.compute_fid \
     resolution=1024 suffix=".jpg" \
-    data_dir=~/dataset/MJHQ-30K/imgs \
-    fid.save_path=~/dataset/MJHQ-30K/MJHQ_30K_1024px_fid_embeddings_30000.npz
+    data_dir=assets/dataset/MJHQ-30K/imgs \
+    fid.save_path=assets/dataset/MJHQ-30K/MJHQ_30K_1024px_fid_embeddings_30000.npz
 ```
 
 ## Prepare Training Data
 
-Please download the example training data from https://drive.google.com/drive/folders/1koHmuXg6GYKvDLcc_PQ_HupQcSEM6od8 to an appropriate path.
+Download only the Z-Image training examples from [DC-Gen-Data](https://huggingface.co/datasets/dc-ai/DC-Gen-Data). These TAR shards are example data for exercising the training workflow, not the complete training dataset. The download preserves the `train_example/zimage/` directory, including its `align/` subset.
+
+```bash
+hf download --repo-type dataset dc-ai/DC-Gen-Data \
+    --include "train_example/zimage/*" \
+    --local-dir assets/dataset/dc-gen-data
+```
 
 ### Step 1: Extract Meta for RGB Tar Files
 
 ```bash
 python -m dc_ai.apps.data_provider.web_dataset.generate_meta \
-    data_dir=<path/to/rgb/tar/shards> \
-    save_path=<path/to/save/rgb_meta.json>
+    data_dir=assets/dataset/dc-gen-data/train_example/zimage \
+    save_path=assets/data/meta/zimage_example_rgb.json
 
 ```
 
@@ -85,18 +92,18 @@ python -m dc_ai.apps.data_provider.web_dataset.generate_meta \
 ```bash
 # 512px flux-vae (teacher for Stage 1)
 python -m dc_ai.t2icore.data_provider.multiprocess_generate_latent_archives \
-    meta_path=<path/to/rgb_meta.json> \
-    original_archive_dir=<path/to/rgb/tar/shards> \
-    save_dir=<path/to/latent/flux_vae_512> \
+    meta_path=assets/data/meta/zimage_example_rgb.json \
+    original_archive_dir=assets/dataset/dc-gen-data/train_example/zimage \
+    save_dir=assets/dataset/latent/zimage_example/flux_vae_512 \
     resolution=512 batch_size=4 \
     autoencoder.name=flux-vae \
     run_dir=tmp_extract_latent_flux_vae_512
 
 # 512px dc-ae (student for Stage 1)
 python -m dc_ai.t2icore.data_provider.multiprocess_generate_latent_archives \
-    meta_path=<path/to/rgb_meta.json> \
-    original_archive_dir=<path/to/rgb/tar/shards> \
-    save_dir=<path/to/latent/dc_ae_f32c32_512> \
+    meta_path=assets/data/meta/zimage_example_rgb.json \
+    original_archive_dir=assets/dataset/dc-gen-data/train_example/zimage \
+    save_dir=assets/dataset/latent/zimage_example/dc_ae_f32c32_512 \
     resolution=512 batch_size=4 \
     autoencoder.name=dc-ae-f32c32-in-1.0 \
     autoencoder.scaling_factor=0.3189 \
@@ -104,9 +111,9 @@ python -m dc_ai.t2icore.data_provider.multiprocess_generate_latent_archives \
 
 # 1024px dc-ae (for Stage 3)
 python -m dc_ai.t2icore.data_provider.multiprocess_generate_latent_archives \
-    meta_path=<path/to/rgb_meta.json> \
-    original_archive_dir=<path/to/rgb/tar/shards> \
-    save_dir=<path/to/latent/dc_ae_f32c32_1024> \
+    meta_path=assets/data/meta/zimage_example_rgb.json \
+    original_archive_dir=assets/dataset/dc-gen-data/train_example/zimage \
+    save_dir=assets/dataset/latent/zimage_example/dc_ae_f32c32_1024 \
     resolution=1024 batch_size=4 \
     autoencoder.name=dc-ae-f32c32-in-1.0 \
     autoencoder.scaling_factor=0.3189 \
@@ -117,16 +124,16 @@ python -m dc_ai.t2icore.data_provider.multiprocess_generate_latent_archives \
 
 ```bash
 python -m dc_ai.apps.data_provider.web_dataset.generate_meta \
-    data_dir=<path/to/latent/flux_vae_512> \
-    save_path=assets/data/meta/wids/flux_vae_512/<dataset>/zimage_flux_reason.json
+    data_dir=assets/dataset/latent/zimage_example/flux_vae_512 \
+    save_path=assets/data/meta/wids/flux_vae_512/zimage/zimage_flux_reason.json
 
 python -m dc_ai.apps.data_provider.web_dataset.generate_meta \
-    data_dir=<path/to/latent/dc_ae_f32c32_512> \
-    save_path=assets/data/meta/wids/dc_ae_f32c32_in_1.0_512/<dataset>/zimage_flux_reason.json
+    data_dir=assets/dataset/latent/zimage_example/dc_ae_f32c32_512 \
+    save_path=assets/data/meta/wids/dc_ae_f32c32_in_1.0_512/zimage/zimage_flux_reason.json
 
 python -m dc_ai.apps.data_provider.web_dataset.generate_meta \
-    data_dir=<path/to/latent/dc_ae_f32c32_1024> \
-    save_path=assets/data/meta/wids/dc_ae_f32c32_in_1.0_1024/<dataset>/zimage_flux_reason.json
+    data_dir=assets/dataset/latent/zimage_example/dc_ae_f32c32_1024 \
+    save_path=assets/data/meta/wids/dc_ae_f32c32_in_1.0_1024/zimage/zimage_flux_reason.json
 ```
 
 ## Step 1: DC-Gen (f8 -> f32) on 512px Generation
@@ -180,7 +187,7 @@ path=exp/dc_gen/ZImage/zimage_turbo_6B_to_dc_ae_f32c32_1.0/phase_1_512_0223_test
 torchrun --nnodes=1 --nproc_per_node=4 -m dc_ai.t2icore.trainer mode=train \
     resolution=512 mixture.resolution=512 \
     mixture.data_providers=[LatentZImageFluxReason] \
-    mixture.wds_meta_dir=assets/data/meta/wids/dc_ae_f32c32_in_1.0_512 \
+    mixture.wds_meta_dir=assets/data/meta/wids/dc_ae_f32c32_in_1.0_512/zimage \
     mixture.batch_size=64 \
     autoencoder.name=dc-ae-f32c32-in-1.0-diffusers autoencoder.scaling_factor=0.3189 \
     distributed_method=FSDPWrap \
@@ -215,7 +222,7 @@ path=exp/dc_gen/ZImage/zimage_turbo_6B_to_dc_ae_f32c32_1.0/phase_2_512_flux2_cfg
 torchrun --nnodes=1 --nproc_per_node=4 -m dc_ai.t2icore.trainer mode=train \
     resolution=512 mixture.resolution=512 \
     mixture.data_providers=[LatentZImageFluxReason] \
-    mixture.wds_meta_dir=assets/data/meta/wids/dc_ae_f32c32_in_1.0_512 \
+    mixture.wds_meta_dir=assets/data/meta/wids/dc_ae_f32c32_in_1.0_512/zimage \
     mixture.batch_size=64 \
     autoencoder.name=dc-ae-f32c32-in-1.0-diffusers autoencoder.scaling_factor=0.3189 \
     distributed_method=FSDPWrap \
@@ -261,7 +268,7 @@ path=assets/checkpoints/t2i/zimage_512px_dcae_1_0_f32c32_0223_cfg_3_flux2_test_s
 torchrun --nnodes=1 --nproc_per_node=4 -m dc_ai.t2icore.trainer mode=train \
     resolution=1024 mixture.resolution=1024 \
     mixture.data_providers=[LatentZImageFluxReason] \
-    mixture.wds_meta_dir=assets/data/meta/wids/dc_ae_f32c32_in_1.0_1024 \
+    mixture.wds_meta_dir=assets/data/meta/wids/dc_ae_f32c32_in_1.0_1024/zimage \
     mixture.batch_size=64 \
     autoencoder.name=dc-ae-f32c32-in-1.0-diffusers autoencoder.scaling_factor=0.3189 \
     distributed_method=FSDPWrap \

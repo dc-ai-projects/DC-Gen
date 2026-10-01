@@ -41,7 +41,7 @@ class Kinetics600DataProviderConfig(STAECoreDataProviderConfig):
 @dataclass
 class Kinetics600TestDataProviderConfig(Kinetics600DataProviderConfig):
     name: str = "Kinetics600Test"
-    data_dir: str = "~/dataset/kinetics_600/test"
+    data_dir: str = "assets/dataset/kinetics_600/test"
     wds_meta_path: Optional[str] = "assets/data/meta/kinetics_600_test.json"
     metadata_path: Optional[str] = "assets/data/examination/Kinetics600Test.csv"
     size_transform: str = "TemporalCenterCropSpatialDMCrop"

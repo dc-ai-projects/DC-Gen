@@ -153,7 +153,7 @@ save_image(image_samples * 0.5 + 0.5, "demo_dc_ae_diffusion.jpg", nrow=int(np.sq
 
 ## Evaluate Deep Compression Autoencoder
 
-- Download the ImageNet dataset to `~/dataset/imagenet`.
+- Download the ImageNet dataset to `assets/dataset/imagenet`.
 
 - Generate metadata.
 
@@ -257,13 +257,13 @@ torchrun --nnodes=1 --nproc_per_node=8 -m applications.dc_ae.eval_dc_ae_diffusio
 ```bash
 # Example: DC-AE-f64
 torchrun --nnodes=1 --nproc_per_node=8 -m applications.dc_ae.dc_ae_generate_latent resolution=512 \
-    image_root_path=~/dataset/imagenet/train batch_size=64 \
+    image_root_path=assets/dataset/imagenet/train batch_size=64 \
     model_name=dc-ae-f64c128-in-1.0 scaling_factor=0.2889 \
     latent_root_path=assets/data/latent/dc_ae_f64c128_in_1.0/imagenet_512
 
 # Example: DC-AE-f32
 torchrun --nnodes=1 --nproc_per_node=8 -m applications.dc_ae.dc_ae_generate_latent resolution=512 \
-    image_root_path=~/dataset/imagenet/train batch_size=64 \
+    image_root_path=assets/dataset/imagenet/train batch_size=64 \
     model_name=dc-ae-f32c32-in-1.0 scaling_factor=0.3189 \
     latent_root_path=assets/data/latent/dc_ae_f32c32_in_1.0/imagenet_512
 ```

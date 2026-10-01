@@ -23,9 +23,9 @@ python -m applications.dc_gen.inference_demo.generate task=<task> prompt="<text>
 | Option | Description |
 |--------|-------------|
 | `input_image_path=<path>` | Required for i2v and edit tasks |
-| `width=<int>` | Output width (default: task-specific) |
-| `height=<int>` | Output height (default: task-specific) |
-| `num_frames=<int>` | Number of video frames (default: 81) |
+| `width=<int>` | Image output width; video dimensions are selected automatically |
+| `height=<int>` | Image output height; video dimensions are selected automatically |
+| `num_frames=<int>` | Video frames: use a positive multiple of **40** (`40`, `80`, `120`, ...); default: 81, rounded down to 80 by DC-AE-V |
 | `steps=<int>` | Inference steps (default: 20 for images, 50 for video) |
 | `guidance=<float>` | Guidance scale (default: 3.5 for images, 5.0 for video) |
 | `cfg=<float>` | True CFG scale for edit task (default: 3.5) |
@@ -60,15 +60,10 @@ python -m applications.dc_gen.inference_demo.generate task=edit input_image_path
 python -m applications.dc_gen.inference_demo.generate task=t2i_1k prompt="一只猫" save_path=out.jpg use_expander=yes
 ```
 
+For Wan2.1 download/cache details, video dimensions, and the verified I2V GPU configuration, see [Published Model Inference](../../../projects/DC-Gen/Wan2.1_VideoGen.md#published-model-inference).
+
 ## DC-AE-V Reconstruction Demo
 
-```bash
-python -m applications.dc_gen.inference_demo.demo_dc_ae_v \
-    model_name=dc-ae-v-1.0-f32t4c32-bf16 \
-    model_path=applications/dc_gen/inference_demo/pretrained_models/DC-Gen-Wan2.1-I2V-14B/dc-ae-v-f32t4c32-1.0-bf16.pt \
-    input_path_list=[assets/video/kinetics_600_37_crop.mp4] \
-    h=832 w=480 t=80 \
-    run_dir=exp/dc-ae-v-1.0-f32t4c32-bf16
-```
+See [DC-AE-V Reconstruction and Evaluation](../../../projects/DC-Gen/Wan2.1_VideoGen.md#dc-ae-v-reconstruction-and-evaluation) for checkpoint downloads, all five supported variants, standalone reconstruction commands, and the ActivityNet benchmark recipe. The standalone demo expects an existing checkpoint and your own input MP4. All five variants use 40-frame temporal chunks; explicitly set `t` to a positive multiple of **40**, such as `t=40`, `t=80`, or `t=120`.
 
-Generation model weights are downloaded automatically on first use from HuggingFace Hub into `applications/dc_gen/inference_demo/pretrained_models/`. The standalone DC-AE-V demo expects `model_path` to point to an existing checkpoint.
+Generation model weights are downloaded automatically on first use from Hugging Face Hub into `applications/dc_gen/inference_demo/pretrained_models/`. Wan2.1 I2V also downloads its image encoder through the Hugging Face cache.

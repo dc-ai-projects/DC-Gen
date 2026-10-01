@@ -45,33 +45,40 @@ python -m applications.dc_gen.manual_prompt \
 
 ## Prepare Evaluation Benchmark
 
+Run these commands from the repository root. MJHQ-30K images, prompt metadata, and FID reference statistics are stored under `assets/dataset/MJHQ-30K`.
+
 ```bash
 hf download --repo-type dataset playgroundai/MJHQ-30K \
     mjhq30k_imgs.zip meta_data.json \
-    --local-dir ~/dataset/MJHQ-30K
-cd ~/dataset/MJHQ-30K && unzip mjhq30k_imgs.zip -d imgs
-cd -
+    --local-dir assets/dataset/MJHQ-30K
+unzip assets/dataset/MJHQ-30K/mjhq30k_imgs.zip -d assets/dataset/MJHQ-30K/imgs
 
 torchrun --nnodes=1 --nproc_per_node=8 -m dc_ai.apps.metrics.fid.compute_fid \
     resolution=512 suffix=".jpg" \
-    data_dir=~/dataset/MJHQ-30K/imgs \
-    fid.save_path=~/dataset/MJHQ-30K/MJHQ_30K_512px_fid_embeddings_30000.npz
+    data_dir=assets/dataset/MJHQ-30K/imgs \
+    fid.save_path=assets/dataset/MJHQ-30K/MJHQ_30K_512px_fid_embeddings_30000.npz
 torchrun --nnodes=1 --nproc_per_node=8 -m dc_ai.apps.metrics.fid.compute_fid \
     resolution=1024 suffix=".jpg" \
-    data_dir=~/dataset/MJHQ-30K/imgs \
-    fid.save_path=~/dataset/MJHQ-30K/MJHQ_30K_1024px_fid_embeddings_30000.npz
+    data_dir=assets/dataset/MJHQ-30K/imgs \
+    fid.save_path=assets/dataset/MJHQ-30K/MJHQ_30K_1024px_fid_embeddings_30000.npz
 ```
 
 ## Prepare Training Data
 
-Please download the example training data from https://drive.google.com/drive/folders/1FjBivCurr7gQ7GmBH5rIAxwhd0X9dzVb to an appropriate path.
+Download only the FLUX training examples from [DC-Gen-Data](https://huggingface.co/datasets/dc-ai/DC-Gen-Data). These TAR shards are example data for exercising the training workflow, not the complete training dataset. The download preserves the `train_example/flux/` directory, including its `align/` subset.
+
+```bash
+hf download --repo-type dataset dc-ai/DC-Gen-Data \
+    --include "train_example/flux/*" \
+    --local-dir assets/dataset/dc-gen-data
+```
 
 ### Step 1: Extract Meta for RGB Tar Files
 
 ```bash
 python -m dc_ai.apps.data_provider.web_dataset.generate_meta \
-    data_dir=<path/to/rgb/tar/shards> \
-    save_path=<path/to/save/rgb_meta.json>
+    data_dir=assets/dataset/dc-gen-data/train_example/flux \
+    save_path=assets/data/meta/flux_example_rgb.json
 ```
 
 ### Step 2: Extract Latent
@@ -79,18 +86,18 @@ python -m dc_ai.apps.data_provider.web_dataset.generate_meta \
 ```bash
 # 512px flux-vae
 python -m dc_ai.t2icore.data_provider.multiprocess_generate_latent_archives \
-    meta_path=<path/to/rgb_meta.json> \
-    original_archive_dir=<path/to/rgb/tar/shards> \
-    save_dir=<path/to/latent/flux_vae_512> \
+    meta_path=assets/data/meta/flux_example_rgb.json \
+    original_archive_dir=assets/dataset/dc-gen-data/train_example/flux \
+    save_dir=assets/dataset/latent/flux_example/flux_vae_512 \
     resolution=512 batch_size=4 \
     autoencoder.name=flux-vae \
     run_dir=tmp_extract_latent_flux_vae_512
 
 # 512px dc-ae
 python -m dc_ai.t2icore.data_provider.multiprocess_generate_latent_archives \
-    meta_path=<path/to/rgb_meta.json> \
-    original_archive_dir=<path/to/rgb/tar/shards> \
-    save_dir=<path/to/latent/dc_ae_f32c32_512> \
+    meta_path=assets/data/meta/flux_example_rgb.json \
+    original_archive_dir=assets/dataset/dc-gen-data/train_example/flux \
+    save_dir=assets/dataset/latent/flux_example/dc_ae_f32c32_512 \
     resolution=512 batch_size=4 \
     autoencoder.name=dc-ae-f32c32-in-1.0 \
     autoencoder.scaling_factor=0.3189 \
@@ -98,9 +105,9 @@ python -m dc_ai.t2icore.data_provider.multiprocess_generate_latent_archives \
 
 # 1024px dc-ae
 python -m dc_ai.t2icore.data_provider.multiprocess_generate_latent_archives \
-    meta_path=<path/to/rgb_meta.json> \
-    original_archive_dir=<path/to/rgb/tar/shards> \
-    save_dir=<path/to/latent/dc_ae_f32c32_1024> \
+    meta_path=assets/data/meta/flux_example_rgb.json \
+    original_archive_dir=assets/dataset/dc-gen-data/train_example/flux \
+    save_dir=assets/dataset/latent/flux_example/dc_ae_f32c32_1024 \
     resolution=1024 batch_size=4 \
     autoencoder.name=dc-ae-f32c32-in-1.0 \
     autoencoder.scaling_factor=0.3189 \
@@ -111,15 +118,15 @@ python -m dc_ai.t2icore.data_provider.multiprocess_generate_latent_archives \
 
 ```bash
 python -m dc_ai.apps.data_provider.web_dataset.generate_meta \
-    data_dir=<path/to/latent/flux_vae_512> \
+    data_dir=assets/dataset/latent/flux_example/flux_vae_512 \
     save_path=assets/data/meta/latents_512/flux_vae/igdata.json
 
 python -m dc_ai.apps.data_provider.web_dataset.generate_meta \
-    data_dir=<path/to/latent/dc_ae_f32c32_512> \
+    data_dir=assets/dataset/latent/flux_example/dc_ae_f32c32_512 \
     save_path=assets/data/meta/latents_512/dc-ae-f32c32-in-1.0/igdata.json
 
 python -m dc_ai.apps.data_provider.web_dataset.generate_meta \
-    data_dir=<path/to/latent/dc_ae_f32c32_1024> \
+    data_dir=assets/dataset/latent/flux_example/dc_ae_f32c32_1024 \
     save_path=assets/data/meta/latents_1024/dc-ae-f32c32-in-1.0/igdata.json
 ```
 

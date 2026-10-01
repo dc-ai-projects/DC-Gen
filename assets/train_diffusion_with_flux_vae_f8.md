@@ -13,7 +13,7 @@ python -c "import torch; from diffusers import FluxPipeline; pipe = FluxPipeline
 
 ``` bash
 torchrun --nnodes 1 --nproc_per_node=8 -m applications.dc_ae.dc_ae_generate_latent resolution=512 \
-    image_root_path=~/dataset/imagenet/train batch_size=64 \
+    image_root_path=assets/dataset/imagenet/train batch_size=64 \
     model_name=flux-vae \
     latent_root_path=assets/data/latent/flux_vae/imagenet_512
 ```

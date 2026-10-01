@@ -27,13 +27,15 @@ from .dummy import DummyDataProvider, DummyDataProviderConfig, DummyDataset
 from .kinetics_600 import Kinetics600DataProvider, Kinetics600Dataset, Kinetics600Test5000DataProviderConfig
 
 possible_datasets = {
-    "ActivityNet12Test": partial(MultiResolutionVideoDataset, root="~/dataset/activitynet/v1-2/test"),
-    "ActivityNet13Test": partial(MultiResolutionVideoDataset, root="~/dataset/activitynet/v1-3/test"),
+    "ActivityNet12Test": partial(MultiResolutionVideoDataset, root="assets/dataset/activitynet/v1-2/test"),
+    "ActivityNet13Test": partial(MultiResolutionVideoDataset, root="assets/dataset/activitynet/v1-3/test"),
     "Dummy": DummyDataset,
     "Kinetics600Test": partial(
-        Kinetics600Dataset, data_dir="~/dataset/kinetics_600/test", meta_path="assets/data/meta/kinetics_600_test.json"
+        Kinetics600Dataset,
+        data_dir="assets/dataset/kinetics_600/test",
+        meta_path="assets/data/meta/kinetics_600_test.json",
     ),
-    "UCF101": partial(MultiResolutionVideoFolder, root="~/dataset/ucf101/mp4"),
+    "UCF101": partial(MultiResolutionVideoFolder, root="assets/dataset/ucf101/mp4"),
 }
 
 
